@@ -1,5 +1,51 @@
 /* global Chart:false */
 
+// Get the floating button element
+var floatBtn = document.querySelector('.float-btn');
+
+// Add a click event listener to the floating button element
+floatBtn.addEventListener('click', function() {
+  // Get the quantity input from the user using a prompt dialog box
+  var quantity = prompt('Enter Quantity:');
+
+  // Convert the quantity input to a number
+  quantity = parseInt(quantity);
+
+  // Check if the quantity input is valid
+  if (isNaN(quantity) || quantity <= 0) {
+    alert('Invalid Quantity!');
+    return;
+  }
+
+  // Call a function to handle the quantity input
+  handleQuantityInput(quantity);
+});
+
+// Define a function to handle the quantity input
+function handleQuantityInput(quantity) {
+  // Do something with the quantity input, e.g. add it to a shopping cart or update the quantity of an item
+  console.log('Quantity:', quantity);
+
+  var input = document.querySelector('#my-input');
+
+// Add a click event listener to the button element
+document.querySelector('#my-button').addEventListener('click', function() {
+  // Get the value of the input element
+  var inputValue = input.value;
+
+  // Add the input value to the chart data
+  chartData.labels.push('Item ' + (chartData.labels.length + 1));
+  chartData.datasets[0].data.push(parseInt(inputValue));
+
+  // Update the chart
+  myChart.update();
+
+  // Reset the input value to an empty string
+  input.value = '';
+});
+}
+
+
 $(function () {
   'use strict'
 
@@ -79,6 +125,7 @@ $(function () {
 
   var $visitorsChart = $('#visitors-chart')
   // eslint-disable-next-line no-unused-vars
+  
   var visitorsChart = new Chart($visitorsChart, {
     data: {
       labels: ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
@@ -93,6 +140,7 @@ $(function () {
         // pointHoverBackgroundColor: '#007bff',
         // pointHoverBorderColor    : '#007bff'
       },
+      
       {
         type: 'line',
         data: [60, 80, 70, 67, 80, 77, 100],

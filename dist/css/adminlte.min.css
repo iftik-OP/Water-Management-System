@@ -430,6 +430,33 @@ mark {
   font-size: 80%;
   color: #6c757d;
 }
+.float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.float-btn a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #6892e7;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.float-btn a:hover {
+  background-color: #4038ce;
+  transform: scale(1.1);
+}
+
 .blockquote-footer::before {
   content: "\2014\00A0";
 }
