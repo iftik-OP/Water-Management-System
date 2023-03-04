@@ -20,6 +20,10 @@ floatBtn.addEventListener('click', function() {
   // Call a function to handle the quantity input
   handleQuantityInput(quantity);
 });
+function addbar(){
+  let litre = 0
+  
+}
 
 // Define a function to handle the quantity input
 function handleQuantityInput(quantity) {
@@ -42,6 +46,8 @@ document.querySelector('#my-button').addEventListener('click', function() {
 
   // Reset the input value to an empty string
   input.value = '';
+
+  console.log(chartData.datasets)
 });
 }
 
@@ -108,7 +114,7 @@ $(function () {
                 value += 'k'
               }
 
-              return '$' + value
+              return '₹' + value
             }
           }, ticksStyle)
         }],
